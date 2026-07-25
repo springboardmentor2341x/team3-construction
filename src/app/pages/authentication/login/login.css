@@ -1,3 +1,44 @@
+/* Default outline */
+::ng-deep .mdc-notched-outline__leading,
+::ng-deep .mdc-notched-outline__notch,
+::ng-deep .mdc-notched-outline__trailing {
+
+    border-color: rgba(255,255,255,.25) !important;
+
+}
+
+/* Hover */
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__notch,
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__trailing {
+
+    border-color: #f59e0b !important;
+
+}
+
+/* Focus */
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+
+    border-color: #f59e0b !important;
+    border-width: 2px !important;
+
+}
+
+/* Floating label */
+::ng-deep .mat-mdc-floating-label {
+
+    color: #cbd5e1 !important;
+
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+
+    color: #f59e0b !important;
+
+}
+
 *{
     margin:0;
     padding:0;
@@ -148,9 +189,25 @@ h2{
 
 }
 
-::ng-deep .mat-mdc-form-field-icon-suffix{
+::ng-deep .mat-mdc-form-field-icon-suffix mat-icon{
 
-    color:white;
+    color:#f59e0b !important;
+
+}
+::ng-deep .mat-mdc-checkbox label{
+
+    color:#f8fafc;
+
+    font-weight:500;
+
+}
+::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked{
+
+    --mdc-checkbox-selected-checkmark-color:white;
+    --mdc-checkbox-selected-focus-icon-color:#f59e0b;
+    --mdc-checkbox-selected-hover-icon-color:#f59e0b;
+    --mdc-checkbox-selected-icon-color:#f59e0b;
+    --mdc-checkbox-selected-pressed-icon-color:#d97706;
 
 }
 
