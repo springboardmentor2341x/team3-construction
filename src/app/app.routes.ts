@@ -6,7 +6,9 @@ import { Landing } from './pages/landing/landing';
 // Authentication
 import { Login } from './pages/authentication/login/login';
 import { Register } from './pages/authentication/register/register';
-import { ResetPassword } from './pages/authentication/reset-password/reset-password';
+import { ForgotPasswordComponent } from './pages/authentication/forgot-password/forgot-password';
+import { ResetPasswordComponent } from './pages/authentication/reset-password/reset-password';
+import { VerifyOtpComponent } from './pages/authentication/verify-otp/verify-otp';
 
 // Dashboards
 import { AdminDashboard } from './pages/dashboard/admin-dashboard/admin-dashboard';
@@ -35,9 +37,18 @@ export const routes: Routes = [
   },
 
   {
+  path: 'forgot-password',
+  component: ForgotPasswordComponent
+},
+  {
     path: 'reset-password',
-    component: ResetPassword
+    component: ResetPasswordComponent
   },
+
+  {
+  path: 'verify-otp',
+  component: VerifyOtpComponent
+},
 
   // Dashboards
   {

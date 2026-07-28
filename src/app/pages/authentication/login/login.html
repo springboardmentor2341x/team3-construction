@@ -20,15 +20,23 @@
       <p class="welcome-text">
         Sign in to continue to your workspace.
       </p>
-
+<form [formGroup]="loginForm" (ngSubmit)="login()">
       <mat-form-field appearance="outline" class="full-width">
 
         <mat-label>Email</mat-label>
 
         <input
-          matInput
-          type="email"
-          [(ngModel)]="email">
+  matInput
+  type="email"
+  formControlName="email">
+
+<mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+  Email is required
+</mat-error>
+
+<mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+  Enter a valid email address
+</mat-error>
 
         <mat-icon matSuffix>mail</mat-icon>
 
@@ -42,7 +50,15 @@
         <input
           matInput
           [type]="hidePassword ? 'password' : 'text'"
-          [(ngModel)]="password">
+          formControlName="password">
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+  Password is required
+</mat-error>
+
+<mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
+  Password must be at least 8 characters and include an uppercase letter,
+  lowercase letter, number, and special character.
+</mat-error>
 
         <button
           mat-icon-button
@@ -62,25 +78,26 @@
 
       <div class="options">
 
-        <mat-checkbox [(ngModel)]="rememberMe">
+        <mat-checkbox formControlName="rememberMe">
           Remember Me
         </mat-checkbox>
 
-        <a routerLink="/reset-password">
-          Forgot Password?
-        </a>
+        <a routerLink="/forgot-password" class="forgot-link">
+  Forgot Password?
+</a>
 
       </div>
 
       <button
-        mat-raised-button
-        class="login-btn"
-        (click)="login()">
+  mat-raised-button
+  class="login-btn"
+  type="submit"
+  [disabled]="loginForm.invalid">
 
         Login
 
       </button>
-
+</form>
       <p class="register">
 
         Don't have an account?

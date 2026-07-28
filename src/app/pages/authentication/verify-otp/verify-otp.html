@@ -1,0 +1,86 @@
+<div class="otp-container">
+
+  <mat-card class="otp-card">
+
+    <h2>Verify OTP</h2>
+
+    <p class="subtitle">
+      Enter the OTP sent to your email.
+    </p>
+
+    <form [formGroup]="otpForm">
+
+      <div class="otp-boxes">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d1"
+          (input)="onInput($event,0)"
+          (keydown)="onBackspace($event,0)">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d2"
+          (input)="onInput($event,1)"
+          (keydown)="onBackspace($event,1)">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d3"
+          (input)="onInput($event,2)"
+          (keydown)="onBackspace($event,2)">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d4"
+          (input)="onInput($event,3)"
+          (keydown)="onBackspace($event,3)">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d5"
+          (input)="onInput($event,4)"
+          (keydown)="onBackspace($event,4)">
+
+        <input
+          #otpInput
+          class="otp-input"
+          maxlength="1"
+          formControlName="d6"
+          (input)="onInput($event,5)"
+          (keydown)="onBackspace($event,5)">
+
+      </div>
+
+    </form>
+
+    <button
+      mat-raised-button
+      class="verify-btn"
+      (click)="verifyOTP()">
+
+      Verify OTP
+
+    </button>
+
+    <p class="dummy">
+      Demo OTP : <strong>123456</strong>
+    </p>
+
+    <a routerLink="/forgot-password">
+      ← Back
+    </a>
+
+  </mat-card>
+
+</div>
